@@ -29,9 +29,12 @@ class Jardines extends StatelessWidget {
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Text(
-                        '${data[i].name} ${data[i].type} ${data[i].amount} ${data[i].price} ${data[i].origin}'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Text(
+                          'Nombre: ${data[i].name}\nTipo: ${data[i].type}\nCantidad: ${data[i].amount}\nPrecio: ${data[i].price}\nOrigen: ${data[i].origin}'),
+                    ),
                   );
                 });
           }

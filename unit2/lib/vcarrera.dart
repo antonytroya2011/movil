@@ -29,9 +29,12 @@ class Docentes extends StatelessWidget {
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Text(
-                        '${data[i].name} ${data[i].lastName} ${data[i].idCard} ${data[i].email} ${data[i].phoneNumber}'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Text(
+                          'Nombre: ${data[i].name}\nApellido: ${data[i].lastName}\nCédula ${data[i].idCard}\nEmail: ${data[i].email}\nCelular: ${data[i].phoneNumber}'),
+                    ),
                   );
                 });
           }

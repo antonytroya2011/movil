@@ -29,8 +29,12 @@ class Estudiantes extends StatelessWidget {
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Text('${data[i].name} ${data[i].lastName}'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Text(
+                          'Nombre${data[i].name}\nApellido ${data[i].lastName}'),
+                    ),
                   );
                 });
           }

@@ -29,9 +29,12 @@ class Materias extends StatelessWidget {
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Text(
-                        '${data[i].name} ${data[i].code} ${data[i].credits} ${data[i].semester} ${data[i].instructor}'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Text(
+                          'Nombre:${data[i].name}\nCódigo ${data[i].code}\nCreditos: ${data[i].credits}\nSemestre ${data[i].semester}\nInstructor ${data[i].instructor}'),
+                    ),
                   );
                 });
           }

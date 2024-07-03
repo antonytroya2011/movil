@@ -29,9 +29,12 @@ class Carreras extends StatelessWidget {
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Text(
-                        '${data[i].name} ${data[i].description} ${data[i].durationYears} ${data[i].degreeAwarded} ${data[i].department}'),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Text(
+                          'Nombre: ${data[i].name}\nDescripción: ${data[i].description}\nAños: ${data[i].durationYears}\nTítulo ${data[i].degreeAwarded}\nDepartamento: ${data[i].department}'),
+                    ),
                   );
                 });
           }
