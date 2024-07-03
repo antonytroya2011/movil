@@ -63,7 +63,7 @@ class Menu extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/vjardin');
+                      Navigator.of(context).pushNamed('/start');
                     },
                     style: TextButton.styleFrom(
                       side: const BorderSide(

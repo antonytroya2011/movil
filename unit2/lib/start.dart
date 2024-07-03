@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Inicio extends StatelessWidget {
-  const Inicio({super.key});
+class Start extends StatelessWidget {
+  const Start({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("Sistema Escolástico"),
+          child: Text("Jardineria Bengi"),
         ),
       ),
       body: Center(
@@ -16,13 +16,13 @@ class Inicio extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-                "https://sb.kaleidousercontent.com/67418/658x756/361846cee7/all-pages-2.png"),
+                "https://previews.123rf.com/images/sonulkaster/sonulkaster1702/sonulkaster170200684/72532849-dise%C3%B1o-de-logotipo-de-jardiner%C3%ADa-con-pala-y-rastrillo-con-hojas-verdes.jpg"),
             const SizedBox(
               height: 20,
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/views');
+                  Navigator.of(context).pushNamed('/vjardin');
                 },
                 style: TextButton.styleFrom(
                   side: const BorderSide(

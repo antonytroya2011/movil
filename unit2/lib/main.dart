@@ -3,6 +3,7 @@ import 'package:unit2/crear.dart';
 import 'package:unit2/estudiantes.dart';
 import 'package:unit2/inicio.dart';
 import 'package:unit2/menu.dart';
+import 'package:unit2/start.dart';
 import 'package:unit2/vcarrera.dart';
 import 'package:unit2/vdocente.dart';
 import 'package:unit2/views.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/menu': (context) => const Menu(),
         '/crear': (context) => const Crear(),
         '/views': (context) => const Views(),
+        '/start': (context) => const Start(),
         '/student/create': (context) => const EstudentCreate(),
         '/career/create': (context) => const CareerCreate(),
         '/subject/create': (context) => const SubjectCreate(),
