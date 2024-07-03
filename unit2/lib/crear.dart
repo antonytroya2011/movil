@@ -77,12 +77,12 @@ class Crear extends StatelessWidget {
                 Expanded(
                   child: StatefulBuilder(
                     builder: (BuildContext context, StateSetter setState) {
-                      bool _switchValue = false;
+                      bool switchValue = false;
                       return Switch(
-                        value: _switchValue,
+                        value: switchValue,
                         onChanged: (value) {
                           setState(() {
-                            _switchValue = value;
+                            switchValue = value;
                           });
                         },
                       );
@@ -100,12 +100,12 @@ class Crear extends StatelessWidget {
                 Expanded(
                   child: StatefulBuilder(
                     builder: (BuildContext context, StateSetter setState) {
-                      bool _switchValue = false;
+                      bool switchValue = false;
                       return Switch(
-                        value: _switchValue,
+                        value: switchValue,
                         onChanged: (value) {
                           setState(() {
-                            _switchValue = value;
+                            switchValue = value;
                           });
                         },
                       );
@@ -123,12 +123,12 @@ class Crear extends StatelessWidget {
                 Expanded(
                   child: StatefulBuilder(
                     builder: (BuildContext context, StateSetter setState) {
-                      bool _switchValue = false;
+                      bool switchValue = false;
                       return Switch(
-                        value: _switchValue,
+                        value: switchValue,
                         onChanged: (value) {
                           setState(() {
-                            _switchValue = value;
+                            switchValue = value;
                           });
                         },
                       );

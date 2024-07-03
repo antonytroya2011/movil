@@ -23,7 +23,7 @@ class Inicio extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/estudiantes');
+                  Navigator.of(context).pushNamed('/views');
                 },
                 style: TextButton.styleFrom(
                   side: const BorderSide(

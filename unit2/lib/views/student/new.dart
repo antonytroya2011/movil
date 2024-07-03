@@ -81,7 +81,15 @@ class _EstudentCreateState extends State<EstudentCreate> {
                       onPressed: () {
                         Navigator.of(context).pushNamed('/career/create');
                       },
-                      child: const Text('Ir ingresar Carrera'))
+                      child: const Text('Ir ingresar Carrera')),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/garden/create');
+                      },
+                      child: const Text('Ir ingresar Flor')),
                 ],
               )),
         ));
