@@ -32,9 +32,23 @@ class Jardines extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      child: Text(
-                          'Nombre: ${data[i].name}\nTipo: ${data[i].type}\nCantidad: ${data[i].amount}\nPrecio: ${data[i].price}\nOrigen: ${data[i].origin}'),
-                    ),
+                        child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                              'Nombre: ${data[i].name}\nTipo: ${data[i].type}\nCantidad: ${data[i].amount}\nPrecio: ${data[i].price}\nOrigen: ${data[i].origin}'),
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/garden/update',
+                                  arguments: data[i]);
+                            },
+                            icon: const Icon(Icons.edit_outlined)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete_outlined)),
+                      ],
+                    )),
                   );
                 });
           }

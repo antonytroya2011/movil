@@ -8,11 +8,15 @@ import 'package:unit2/vcarrera.dart';
 import 'package:unit2/vdocente.dart';
 import 'package:unit2/views.dart';
 import 'package:unit2/views/career/newc.dart';
+import 'package:unit2/views/career/update.dart';
 import 'package:unit2/views/garden/newg.dart';
+import 'package:unit2/views/garden/update.dart';
 import 'package:unit2/views/student/new.dart';
 import 'package:unit2/views/student/update.dart';
 import 'package:unit2/views/subject/news.dart';
+import 'package:unit2/views/subject/update.dart';
 import 'package:unit2/views/teacher/newt.dart';
+import 'package:unit2/views/teacher/update.dart';
 import 'package:unit2/vjardin.dart';
 import 'package:unit2/vmateria.dart';
 
@@ -40,6 +44,10 @@ class MyApp extends StatelessWidget {
         '/teacher/create': (context) => const TeacherCreate(),
         '/garden/create': (context) => const GardenCreate(),
         '/student/update': (context) => const EstudentUpdate(),
+        '/career/update': (context) => const CareerUpdate(),
+        '/subject/update': (context) => const SubjectUpdate(),
+        '/teacher/update': (context) => const TeacherUpdate(),
+        '/garden/update': (context) => const GardenUpdate(),
         '/vdocente': (context) => const Carreras(),
         '/vmateria': (context) => const Materias(),
         '/vcarrera': (context) => const Docentes(),

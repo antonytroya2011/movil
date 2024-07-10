@@ -32,9 +32,23 @@ class Materias extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      child: Text(
-                          'Nombre:${data[i].name}\nCódigo ${data[i].code}\nCreditos: ${data[i].credits}\nSemestre ${data[i].semester}\nInstructor ${data[i].instructor}'),
-                    ),
+                        child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                              'Nombre:${data[i].name}\nCódigo ${data[i].code}\nCreditos: ${data[i].credits}\nSemestre ${data[i].semester}\nInstructor ${data[i].instructor}'),
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/subject/update',
+                                  arguments: data[i]);
+                            },
+                            icon: const Icon(Icons.edit_outlined)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete_outlined)),
+                      ],
+                    )),
                   );
                 });
           }

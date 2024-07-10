@@ -32,9 +32,23 @@ class Docentes extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      child: Text(
-                          'Nombre: ${data[i].name}\nApellido: ${data[i].lastName}\nCédula ${data[i].idCard}\nEmail: ${data[i].email}\nCelular: ${data[i].phoneNumber}'),
-                    ),
+                        child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                              'Nombre: ${data[i].name}\nApellido: ${data[i].lastName}\nCédula ${data[i].idCard}\nEmail: ${data[i].email}\nCelular: ${data[i].phoneNumber}'),
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/teacher/update',
+                                  arguments: data[i]);
+                            },
+                            icon: const Icon(Icons.edit_outlined)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete_outlined)),
+                      ],
+                    )),
                   );
                 });
           }

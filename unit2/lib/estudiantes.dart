@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:unit2/entities/estudent_entity.dart';
 
 class Estudiantes extends StatelessWidget {
@@ -41,8 +40,8 @@ class Estudiantes extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              Navigator.of(context)
-                                  .pushNamed('/student/update');
+                              Navigator.of(context).pushNamed('/student/update',
+                                  arguments: data[i]);
                             },
                             icon: const Icon(Icons.edit_outlined)),
                         IconButton(

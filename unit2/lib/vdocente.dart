@@ -32,9 +32,23 @@ class Carreras extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      child: Text(
-                          'Nombre: ${data[i].name}\nDescripción: ${data[i].description}\nAños: ${data[i].durationYears}\nTítulo ${data[i].degreeAwarded}\nDepartamento: ${data[i].department}'),
-                    ),
+                        child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                              'Nombre: ${data[i].name}\nDescripción: ${data[i].description}\nAños: ${data[i].durationYears}\nTítulo ${data[i].degreeAwarded}\nDepartamento: ${data[i].department}'),
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/career/update',
+                                  arguments: data[i]);
+                            },
+                            icon: const Icon(Icons.edit_outlined)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete_outlined)),
+                      ],
+                    )),
                   );
                 });
           }
