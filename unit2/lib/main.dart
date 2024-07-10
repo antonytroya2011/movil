@@ -10,6 +10,7 @@ import 'package:unit2/views.dart';
 import 'package:unit2/views/career/newc.dart';
 import 'package:unit2/views/garden/newg.dart';
 import 'package:unit2/views/student/new.dart';
+import 'package:unit2/views/student/update.dart';
 import 'package:unit2/views/subject/news.dart';
 import 'package:unit2/views/teacher/newt.dart';
 import 'package:unit2/vjardin.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/subject/create': (context) => const SubjectCreate(),
         '/teacher/create': (context) => const TeacherCreate(),
         '/garden/create': (context) => const GardenCreate(),
+        '/student/update': (context) => const EstudentUpdate(),
         '/vdocente': (context) => const Carreras(),
         '/vmateria': (context) => const Materias(),
         '/vcarrera': (context) => const Docentes(),

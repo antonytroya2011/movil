@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:unit2/entities/estudent_entity.dart';
 
 class Estudiantes extends StatelessWidget {
@@ -32,9 +33,23 @@ class Estudiantes extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      child: Text(
-                          'Nombre${data[i].name}\nApellido ${data[i].lastName}'),
-                    ),
+                        child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                              'Nombre: ${data[i].name}\nApellido: ${data[i].lastName}'),
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed('/student/update');
+                            },
+                            icon: const Icon(Icons.edit_outlined)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete_outlined)),
+                      ],
+                    )),
                   );
                 });
           }
