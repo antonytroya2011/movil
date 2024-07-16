@@ -70,7 +70,7 @@ class DbConnection {
         whereArgs: [id]); // llamando a la variable del id
   }
 
-  static Future<int> delete(String table, dynamic data, int id) async {
+  static Future<int> delete(String table, int id) async {
     final db = await getConnection(); // llamado  a la funcion de conexion
     return db.delete(table, where: 'id=?', whereArgs: [id]);
   }

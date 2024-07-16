@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:unit2/entities/estudent_entity.dart';
+import 'package:unit2/settings/db_connection.dart';
 
 class Estudiantes extends StatelessWidget {
   const Estudiantes({super.key});
@@ -45,7 +47,31 @@ class Estudiantes extends StatelessWidget {
                             },
                             icon: const Icon(Icons.edit_outlined)),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () => showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                      title: const Text("Eliminar Registro"),
+                                      content: const Text(
+                                          "Estás seguro que quieres eliminar el registro?"),
+                                      actions: [
+                                        TextButton(
+                                            onPressed: () async {
+                                              await DbConnection.delete(
+                                                  'estudiante',
+                                                  data[i].id as int);
+                                              Navigator.pushNamed(
+                                                  // ignore: use_build_context_synchronously
+                                                  context,
+                                                  '/estudiantes');
+                                            },
+                                            child: const Text("Aceptar")),
+                                        TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(context, "Cancel");
+                                            },
+                                            child: const Text("Cancelar"))
+                                      ],
+                                    )),
                             icon: const Icon(Icons.delete_outlined)),
                       ],
                     )),
