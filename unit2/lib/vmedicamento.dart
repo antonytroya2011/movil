@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:unit2/entities/garden_entity.dart';
+import 'package:unit2/entities/medication_entity.dart';
 import 'package:unit2/settings/db_connection.dart';
 
-class Jardines extends StatelessWidget {
-  const Jardines({super.key});
+class Medicamentos extends StatelessWidget {
+  const Medicamentos({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("Lista de Jardines"),
+          child: Text("Lista de Medicamentos"),
         ),
       ),
-      body: FutureBuilder<List<Garden>>(
-        future: Garden.select(),
+      body: FutureBuilder<List<Medication>>(
+        future: Medication.select(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
@@ -26,7 +26,7 @@ class Jardines extends StatelessWidget {
             );
           } else {
             // ignore: unused_local_variable
-            List<Garden> data = snapshot.data as List<Garden>;
+            List<Medication> data = snapshot.data as List<Medication>;
             return ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, i) {
@@ -37,11 +37,12 @@ class Jardines extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                              'Nombre: ${data[i].name}\nTipo: ${data[i].type}\nCantidad: ${data[i].amount}\nPrecio: ${data[i].price}\nOrigen: ${data[i].origin}'),
+                              'Nombre: ${data[i].name}\nDescripción: ${data[i].description}\nCantidad: ${data[i].amount}\nLote: ${data[i].batch}\nProveedor: ${data[i].supplier}'),
                         ),
                         IconButton(
                             onPressed: () {
-                              Navigator.of(context).pushNamed('/garden/update',
+                              Navigator.of(context).pushNamed(
+                                  '/medication/update',
                                   arguments: data[i]);
                             },
                             icon: const Icon(Icons.edit_outlined)),
@@ -56,15 +57,17 @@ class Jardines extends StatelessWidget {
                                         TextButton(
                                             onPressed: () async {
                                               await DbConnection.delete(
-                                                  'garden', data[i].id as int);
+                                                  'medication',
+                                                  data[i].id as int);
                                               // ignore: use_build_context_synchronously
                                               Navigator.of(context).pop();
                                               // ignore: use_build_context_synchronously
                                               Navigator.of(context).pop();
+
                                               Navigator.pushNamed(
                                                   // ignore: use_build_context_synchronously
                                                   context,
-                                                  '/vjardin');
+                                                  '/vmedicamento');
                                             },
                                             child: const Text("Aceptar")),
                                         TextButton(
@@ -84,7 +87,7 @@ class Jardines extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/garden/create');
+          Navigator.of(context).pushNamed('/medication/create');
         },
         child: const Icon(Icons.add),
       ),

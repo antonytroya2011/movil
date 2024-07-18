@@ -1,29 +1,49 @@
 import 'package:flutter/material.dart';
 
-class Inicio extends StatelessWidget {
-  const Inicio({super.key});
+class Personal extends StatelessWidget {
+  const Personal({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            "Datos personales",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
       body: Center(
           child: Column(
         children: [
+          const SizedBox(
+            height: 30,
+          ),
           const Text(
-            "Evaluación",
+            "Mi información",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Bienvenido"),
-              const SizedBox(
-                height: 35,
-              ),
               Image.asset(
-                "images/escolastico.png",
-                fit: BoxFit.cover,
+                "images/foto.jpeg",
+                height: 150,
+                width: 300,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text(
+                "Nombre: Antony Israel Troya Cuzco\n"
+                "Edad: 23 años\n"
+                "Email: antony.troya2963@utc.edu.ec\n"
+                "Contacto: 0984752386\n"
+                "Dirección: Latacunga",
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 16),
               ),
               const SizedBox(
                 height: 20,
@@ -41,7 +61,7 @@ class Inicio extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: const Text("Bienvenido"))
+                  child: const Text("Inicio"))
             ],
           ),
         ],

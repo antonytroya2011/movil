@@ -14,8 +14,10 @@ class Views extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Image.network(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPBCTP9HMYjJ95D1uo7PMICWpLizNmN0IaCg&s"),
+            Image.asset(
+              "images/utc.jpeg",
+              fit: BoxFit.cover,
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -90,9 +92,49 @@ class Views extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: const Text("Materias"))
+                child: const Text("Materias")),
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/start');
+                },
+                style: TextButton.styleFrom(
+                  side: const BorderSide(
+                    color: Colors.black,
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Text("Jardineria")),
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/begin');
+                },
+                style: TextButton.styleFrom(
+                  side: const BorderSide(
+                    color: Colors.black,
+                  ),
+                  padding: const EdgeInsets.all(16.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+                child: const Text("Taller en clase"))
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed('/personaldata');
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

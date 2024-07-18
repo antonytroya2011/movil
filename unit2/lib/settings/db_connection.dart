@@ -45,7 +45,11 @@ class DbConnection {
               await db.execute(
                   "CREATE TABLE garden(id INTEGER PRIMARY KEY, name TEXT, type Text, amount INTEGER, price TEXT, origin TEXT)"),
               await db.execute(
-                  "INSERT INTO garden VALUES(1,'Rosa','Flor',50,'1.50', 'Colombia')")
+                  "INSERT INTO garden VALUES(1,'Rosa','Flor',50,'1.50', 'Colombia')"),
+              await db.execute(
+                  "CREATE TABLE medication(id INTEGER PRIMARY KEY, name TEXT, description Text, batch Text, supplier TEXT, amount INTEGER)"),
+              await db.execute(
+                  "INSERT INTO medication VALUES(1, 'Paracetamol', 'Analgesic and antipyretic', 'BATCH001', 'XYZ Pharmaceuticals', 100)")
             },
         version: version);
     // declarar una funcion asincrona llamada getConnection()

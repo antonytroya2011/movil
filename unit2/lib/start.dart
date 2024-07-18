@@ -15,8 +15,10 @@ class Start extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-                "https://previews.123rf.com/images/sonulkaster/sonulkaster1702/sonulkaster170200684/72532849-dise%C3%B1o-de-logotipo-de-jardiner%C3%ADa-con-pala-y-rastrillo-con-hojas-verdes.jpg"),
+            Image.asset(
+              "images/jardin.jpg",
+              fit: BoxFit.cover,
+            ),
             const SizedBox(
               height: 20,
             ),

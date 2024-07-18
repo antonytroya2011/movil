@@ -59,6 +59,10 @@ class Estudiantes extends StatelessWidget {
                                               await DbConnection.delete(
                                                   'estudiante',
                                                   data[i].id as int);
+                                              // ignore: use_build_context_synchronously
+                                              Navigator.of(context).pop();
+                                              // ignore: use_build_context_synchronously
+                                              Navigator.of(context).pop();
                                               Navigator.pushNamed(
                                                   // ignore: use_build_context_synchronously
                                                   context,

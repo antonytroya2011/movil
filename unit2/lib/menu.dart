@@ -19,15 +19,17 @@ class Menu extends StatelessWidget {
             ),
             const Text(
               'Bienvenido',
-              style: TextStyle(fontSize: 25),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 40,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                  "https://www.revistarupturas.com/images/utcinfraestructura.jpg?crc=15102744"),
+              child: Image.asset(
+                "images/inicio.jpg",
+                fit: BoxFit.cover,
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -46,7 +48,7 @@ class Menu extends StatelessWidget {
               children: [
                 TextButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/inicio');
+                      Navigator.of(context).pushNamed('/views');
                     },
                     style: TextButton.styleFrom(
                       side: const BorderSide(
@@ -57,26 +59,12 @@ class Menu extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    child: const Text("Escolastico")),
-                const SizedBox(
-                  width: 40,
-                ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed('/start');
-                    },
-                    style: TextButton.styleFrom(
-                      side: const BorderSide(
-                        color: Colors.black,
-                      ),
-                      padding: const EdgeInsets.all(16.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    child: const Text("Jardineria")),
+                    child: const Text("Ingresar al sistema")),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 40,
+            ),
           ],
         ),
       ),
