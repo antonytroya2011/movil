@@ -97,9 +97,10 @@ class _GardenCreateState extends State<GardenCreate> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/vjardin');
-
-                      insert();
+                      if (gardenForm.currentState!.validate()) {
+                        insert();
+                        Navigator.of(context).pushNamed('/vjardin');
+                      }
                     },
                     child: const Text('Insertar Flor')),
                 const SizedBox(

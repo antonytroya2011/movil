@@ -97,8 +97,10 @@ class _TeacherCreateState extends State<TeacherCreate> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/vcarrera');
-                      insert();
+                      if (teacherForm.currentState!.validate()) {
+                        insert();
+                        Navigator.of(context).pushNamed('/vcarrera');
+                      }
                     },
                     child: const Text('Insertar Profesor')),
                 const SizedBox(

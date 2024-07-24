@@ -97,9 +97,10 @@ class _CareerCreateState extends State<CareerCreate> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/vdocente');
-
-                      insert();
+                      if (careerForm.currentState!.validate()) {
+                        insert();
+                        Navigator.of(context).pushNamed('/vdocente');
+                      }
                     },
                     child: const Text('Insertar Carrera')),
                 const SizedBox(

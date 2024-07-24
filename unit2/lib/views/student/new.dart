@@ -53,9 +53,10 @@ class _EstudentCreateState extends State<EstudentCreate> {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/estudiantes');
-
-                        insert();
+                        if (studentForm.currentState!.validate()) {
+                          insert();
+                          Navigator.of(context).pushNamed('/estudiantes');
+                        }
                       },
                       child: const Text('Insertar Estudiante')),
                   const SizedBox(

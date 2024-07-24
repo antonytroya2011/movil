@@ -97,9 +97,10 @@ class _SubjectCreateState extends State<SubjectCreate> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/vmateria');
-
-                      insert();
+                      if (subjectForm.currentState!.validate()) {
+                        insert();
+                        Navigator.of(context).pushNamed('/vmateria');
+                      }
                     },
                     child: const Text('Insertar Materia')),
                 const SizedBox(
