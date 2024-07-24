@@ -59,6 +59,10 @@ class _MedicationCreateState extends State<MedicationCreate> {
                     if (value == null || value.isEmpty) {
                       return 'Este campo es requerido';
                     }
+                    final int? amount = int.tryParse(value);
+                    if (amount == null) {
+                      return 'Ingrese un número válido';
+                    }
                     return null;
                   },
                 ),
@@ -118,12 +122,23 @@ class _MedicationCreateState extends State<MedicationCreate> {
         name: nameControl.text,
         description: descriptionControl.text,
         amount: int.parse(amountControl.text),
-        batch: batchControl.text, // Correct assignment
-        supplier: supplierControl.text, // Correct assignment
+        batch: batchControl.text,
+        supplier: supplierControl.text,
       );
 
       // ignore: avoid_print
       print(await DbConnection.insert('medication', data.toDictionary()));
+      // Limpiar los campos después de la inserción
+      nameControl.clear();
+      descriptionControl.clear();
+      amountControl.clear();
+      batchControl.clear();
+      supplierControl.clear();
+
+      // Navegar a la lista de medicamentos
+      if (mounted) {
+        Navigator.of(context).pushNamed('/vmedicamento');
+      }
     }
   }
 }

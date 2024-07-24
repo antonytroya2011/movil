@@ -71,6 +71,10 @@ class _MedicationUpdateState extends State<MedicationUpdate> {
                     if (value == null || value.isEmpty) {
                       return 'Este campo es requerido';
                     }
+                    final int? amount = int.tryParse(value);
+                    if (amount == null) {
+                      return 'Ingrese un número válido';
+                    }
                     return null;
                   },
                 ),
