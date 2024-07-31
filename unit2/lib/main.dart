@@ -6,6 +6,7 @@ import 'package:unit2/inicio.dart';
 import 'package:unit2/menu.dart';
 import 'package:unit2/personaldata.dart';
 import 'package:unit2/start.dart';
+import 'package:unit2/vapi.dart';
 import 'package:unit2/vcarrera.dart';
 import 'package:unit2/vdocente.dart';
 import 'package:unit2/views.dart';
@@ -22,6 +23,7 @@ import 'package:unit2/views/subject/update.dart';
 import 'package:unit2/views/teacher/newt.dart';
 import 'package:unit2/views/teacher/update.dart';
 import 'package:unit2/vjardin.dart';
+import 'package:unit2/vjokes.dart';
 import 'package:unit2/vmateria.dart';
 import 'package:unit2/vmedicamento.dart';
 
@@ -62,6 +64,8 @@ class MyApp extends StatelessWidget {
         '/vcarrera': (context) => const Docentes(),
         '/vjardin': (context) => const Jardines(),
         '/vmedicamento': (context) => const Medicamentos(),
+        '/vapi': (context) => const ListaPais(),
+        '/jokes': (context) => const ListaChiste()
       },
     );
   }

@@ -66,6 +66,12 @@ class Personal extends StatelessWidget {
           ),
         ],
       )),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed('/jokes');
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
